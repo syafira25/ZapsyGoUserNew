@@ -1,0 +1,50 @@
+[
+  {
+    "id": "TR001",
+    "name": "Explore Batam 1 Hari",
+    "durasi": "1 Hari",
+    "desc": "Kunjungan ke ikon utama Batam seperti Jembatan Barelang, Welcome To Batam, dan belanja oleh-oleh.",
+    "price": "300000.000",
+    "gambar": "/uploads/1982cc59004.jpeg"
+  },
+  {
+    "id": "TR002",
+    "name": "Pantai Elyora",
+    "durasi": "3 Hari",
+    "desc": "Sejak dibuka untuk umum pada Januari 2018, Pantai Elyora terus berkembang dengan berbagai fasilitas yang mendukung kenyamanan pengunjung.    Keindahan pantainya yang masih alami, pasir putih yang lembut, serta air laut yang jernih menjadi daya tarik utama.",
+    "price": "300000.000",
+    "gambar": "/uploads/1982cc7c27e.jpg"
+  },
+  {
+    "id": "TR003",
+    "name": "Pantai Tanjung Pinggir",
+    "durasi": "2 Hari",
+    "desc": "Pantai ini terkenal dengan pemandangan laut biru yang eksotis dan pemandangan gedung-gedung tinggi Singapura di kejauhan. Pengunjung dapat menikmati berbagai aktivitas seperti berenang, bermain pasir, atau sekadar bersantai sambil menikmati pemandangan. ",
+    "price": "300000.000",
+    "gambar": "/uploads/1982ccb439b.jpeg"
+  },
+  {
+    "id": "TR004",
+    "name": "Pantai Viovio",
+    "durasi": "1 Hari",
+    "desc": "Pantai ini menawarkan pemandangan alam yang indah, termasuk hutan mangrove dan matahari terbenam yang memukau. Pengunjung dapat menikmati berbagai fasilitas seperti gazebo, toilet, penginapan, restoran, dan tempat parkir. Selain itu, terdapat hiburan seperti live band dan DJ pada malam hari, serta pilihan akomodasi seperti camping, glamping, dan water villa. ",
+    "price": "300000.00",
+    "gambar": "/uploads/1982cd4b23d.jpg"
+  },
+  {
+    "id": "TR005",
+    "name": "Pantai Mirota",
+    "durasi": "1 Hari",
+    "desc": "Pantai ini menjadi tujuan populer bagi wisatawan yang mencari tempat untuk bersantai, berenang, bermain air, atau sekadar menikmati pemandangan. Pantai Mirota juga dikenal sebagai tempat yang instagramable, cocok untuk berfoto dan mengabadikan momen-momen indah. ",
+    "price": "300000.00",
+    "gambar": "/uploads/1982cd7acc9.jpg"
+  },
+  {
+    "id": "TR006",
+    "name": "Pantai Bahagia",
+    "durasi": "1 Hari",
+    "desc": "Bahagiaaaaaa",
+    "price": "300000.00",
+    "gambar": "/uploads/1982cdbbbe0.jpg"
+  }
+]

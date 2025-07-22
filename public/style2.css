@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+header {
+  @media (min-width: 768px) {
+    height: 600px;
+  }
+  @media (max-width: 768px) {
+    height: 500px;
+  }
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header > div:nth-child(1) {
+  background: url("assets/barelang.jpeg") center/cover no-repeat;
+  border-radius: 50px;
+}
+.header-overlay {
+  background-color: rgba(66, 76, 99, 0.5);
+  padding: 40px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  max-width: 90%;
+}
+.search-box {
+  bottom: -50px;
+}
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #1b4d8f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-circle i {
+  color: white;
+}
+.card-body {
+  text-align: left;
+}
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+.card {
+  height: 100%;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.navbar {
+  background-color: white !important;
+}
+
+.navbar .nav-link {
+  color: gray !important;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:focus {
+  color: #1b4d8f !important;
+  font-weight: bold;
+}
+.navbar .btn {
+  background-color: #1b4d8f;
+  color: white;
+}
+.navbar .btn:hover {
+  background-color: #1b4d8f;
+}
+.navbar .navbar-brand {
+  color: #1b4d8f !important;
+}
+
+.mt-custom {
+  @media (min-width: 768px) {
+    margin-top: 56px;
+  }
+  @media (max-width: 768px) {
+    margin-top: 56px;
+  }
+}
+
+.card.populer-hover {
+  background-color: white;
+  color: #2560a3;
+  transition: all 0.3s ease-in-out;
+}
+
+.card.populer-hover:hover {
+  background-color: #2560a3;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card.populer-hover:hover .card-title,
+.card.populer-hover:hover .card-text {
+  color: white !important;
+}
+
+.card.populer-hover img {
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.card.populer-hover:hover img {
+  transform: scale(1.05);
+}
+
+.section-box {
+  width: 1320px;
+  margin-bottom: 25px;
+}
+.section-header {
+  height: 76px;
+  background: #2560a3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+.section-body {
+  height: 158px;
+  background: white;
+  outline: 1px solid black;
+  padding: 1rem;
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.card-custom {
+  background-color: #2560a3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.btn-white-rounded {
+  background-color: white;
+  color: #2560a3;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border: none;
+}
+
+.btn-white-rounded:hover {
+  background-color: #f0f0f0;
+  color: #1b4d8f;
+}

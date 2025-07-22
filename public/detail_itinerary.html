@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elyora Beach - ZapsyGo</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="styles.css" />
+ <!-- Preloader Style -->
+      <style>
+.hero {
+  position: relative;
+  height: 400px; /* Atur sesuai kebutuhan */
+  background-image: url('assets/newmelur.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  /* Jika butuh overlay gelap transparan:
+     background: rgba(0,0,0,0.4);
+     padding: 10px;
+  */
+}
+
+      #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 8px solid #eee;
+        border-top: 8px solid #2560a3;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ZapsyGo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-2 m-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">BERANDA</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">TENTANG KAMI</a></li>
+            <li class="nav-item"><a class="nav-link" href="itinerary.html">ITINERARY</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinasi.html">DESTINASI</a></li>
+          </ul>
+          <ul class="navbar-nav gap-2">
+            <!-- Tombol Masuk (untuk user belum login) -->
+            <li class="nav-item" id="loginButton">
+              <a class="btn fw-bold px-3" href="login.html">MASUK</a>
+            </li>
+
+            <!-- Dropdown Profil (hanya muncul jika sudah login) -->
+            <li class="nav-item dropdown d-none" id="profileDropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-circle fs-4"></i> <span>Profil</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="profile.html">Profil Saya</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item text-danger" href="logout.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="profile.html">Profil Saya</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item text-danger" href="logout.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero d-flex align-items-center mt-5 position-relative">
+      <!-- Tombol Kembali -->
+      <a href="javascript:history.back()" class="position-absolute top-0 start-0 m-3 text-white text-decoration-none d-flex align-items-center mt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-arrow-left-circle-fill me-2" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 8.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 0 1z" />
+        </svg>
+        <span class="fw-medium d-none d-sm-inline">Kembali</span>
+      </a>
+
+      <!-- Text Overlay -->
+      <div class="hero-overlay">
+        <h2 class="p-2 d-inline-block" style="background-color: #2560a3">Tour 1 Hari</h2>
+        <br />
+        <h2 class="beach-label bg-white p-2 px-5 d-inline-block" style="color: #2560a3">Pantai Elyora</h2>
+      </div>
+    </div>
+
+    <!-- SECTION HARGA -->
+    <section class="container my-4">
+      <div class="d-flex justify-content-between align-items-cente text-white rounded-4 px-4 py-3" style="background-color: #2560a3">
+        <div>
+          <small class="fw-semibold">Harga</small>
+          <div class="fw-bold fs-4">Rp 300.000 / pax</div>
+        </div>
+        <a href="pesan_sekarang.html" id="pesanSekarangBtn" class="btn btn-light text-primary fw-semibold px-3 py-2 rounded-4 fs-5 d-flex justify-content-center align-items-center">Pesan Sekarang</a>
+      </div>
+    </section>
+
+    <!-- ITINERARY DETAIL -->
+    <section class="container my-4">
+      <h1 class="fw-bold mb-4" style="color: #2560a3">Itinerary</h1>
+      <div class="text-white rounded-4 px-4 py-4" style="background-color: #2560a3">
+        <div class="mb-3">
+          <p class="mb-1"><strong>07:00 - 07:30</strong></p>
+          <p>Driver mulai berangkat, peserta berkumpul di titik lokasi yang sudah ditentukan</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>07:30 - 08:00</strong></p>
+          <p>Load barang dan pengambilan penumpang di lokasi serta pembagian sarapan</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>08:00 - 08:30</strong></p>
+          <p>Perjalanan menuju lokasi serta singgah untuk berfoto di <strong>JEMBATAN BARELANG</strong></p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>08:30 - 09:30</strong></p>
+          <p>Melanjutkan perjalanan menuju lokasi</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>10:00 - 14:00</strong></p>
+          <p>Peserta tour dibebaskan mengeksplor pantai <strong>ELYORA</strong></p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>14:00 - 14:15</strong></p>
+          <p>Peserta tour bersiap-siap untuk meninggalkan area pantai <strong>ELYORA</strong></p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>14:15 - 15:15</strong></p>
+          <p>Perjalanan menuju kelong seafood di Jembatan 3</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="mb-1"><strong>15:15 - 16:30</strong></p>
+          <p>Tiba di kelong seafood untuk santap sore sambil menikmati indahnya senja</p>
+        </div>
+
+        <div class="mb-0">
+          <p class="mb-1"><strong>16:30 - 18:00</strong></p>
+          <p>Perjalanan pulang, berfoto sekali lagi di <strong>JEMBATAN BARELANG</strong>, beli oleh-oleh khas Batam</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILIHAN TOUR LAINNYA -->
+    <section class="container mb-5">
+      <h2 class="fw-bold mb-3" style="color: #2560a3">Pilihan</h2>
+      <h4 class="mb-4 fw-bold" style="color: #2560a3">Tour lainnya</h4>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card border-0 shadow h-100">
+            <img src="assets/wahana.jpeg" class="card-img-top" alt="Dino's Gate" />
+            <div class="card-body text-white" style="background-color: #2865a2">
+              <div class="badge bg-light text-dark mb-2">Tour 1 Hari</div>
+              <h5 class="card-title">Dino’s Gate</h5>
+              <p class="card-text">Theme Park Konsep Dinosaurus yang Terletak di Bengkong</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-0 shadow h-100">
+            <img src="assets/seado.jpeg" class="card-img-top" alt="Seadoo Jetski" />
+            <div class="card-body text-white" style="background-color: #2865a2">
+              <div class="badge bg-light text-dark mb-2">Tour 1 Hari 1 Malam</div>
+              <h5 class="card-title">Seadoo Jetski</h5>
+              <p class="card-text">Wisata Permainan Jetski Dengan Pemandangan Jembatan Barelang</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-0 shadow h-100">
+            <img src="assets/coral.jpg" class="card-img-top" alt="Kepri Coral" />
+            <div class="card-body text-white" style="background-color: #2865a2">
+              <div class="badge bg-light text-dark mb-2">Tour 2 Hari 1 Malam</div>
+              <h5 class="card-title">Kepri Coral</h5>
+              <p class="card-text">Tempat yang Menawarkan Antara Petualangan dan Relaksasi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-5" style="background-color: #2560a3; color: white">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Kolom 1: Logo dan Deskripsi -->
+          <div class="col-md-4">
+            <div class="footer__logo mb-2">
+              <a href="#" class="logo fs-4 fw-bold text-decoration-none text-white">ZapsyGo</a>
+            </div>
+            <p>Explore the world with ease and excitement through our comprehensive travel platform. Your journey begins here, where seamless planning meets unforgettable experiences.</p>
+            <ul class="list-inline mt-3 footer__socials">
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-facebook-fill fs-5 text-white"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-instagram-line fs-5 text-white"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-youtube-line fs-5 text-white"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 2: Akses Cepat -->
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold text-white">Akses Cepat</h5>
+            <ul class="list-unstyled footer__links">
+              <li><a href="index.html" class="text-decoration-none text-white">Beranda</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Destinasi</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Hotel</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Tentang Kami</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Kontak -->
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold text-white">Kontak Kami</h5>
+            <ul class="list-unstyled footer__links">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-phone-fill me-2"></i> +62918278129 </a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-record-mail-line me-2"></i> info@zapsygo </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-map-pin-2-fill me-2"></i> Batam, Indonesia </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer bar -->
+        <div class="text-center mt-4 footer__bar text-white small">Copyright © 2025 ZapsyGo. All rights reserved.</div>
+      </div>
+          <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner"></div>
+    </div>
+    </footer>
+
+    <script>
+      // Preloader hide saat halaman selesai load
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.opacity = "0";
+          preloader.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500);
+        }
+      });
+  window.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      const linkHref = link.getAttribute("href").split("/").pop();
+
+      if (linkHref.startsWith("#")) {
+        if (window.location.hash === linkHref) {
+          link.classList.add("active");
+        }
+      } else {
+        if (currentPath === "" && linkHref === "index.html") {
+          link.classList.add("active");
+        } else if (currentPath === linkHref) {
+          link.classList.add("active");
+        }
+      }
+    });
+    
+      window.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+
+    const nama = params.get("nama") || "Pantai Elyora";
+    const harga = params.get("harga") || "300000";
+    const gambar = params.get("gambar") || "elyora.jpg";
+
+    // Ubah judul, gambar, dan harga
+    document.querySelector(".beach-label").textContent = nama;
+    document.querySelector(".hero").style.backgroundImage = `url('assets/${gambar}')`;
+    document.querySelector(".fs-4").textContent = `Rp ${Number(harga).toLocaleString("id-ID")} / pax`;
+
+    // Optional: Update deskripsi itinerary jika destinasi berbeda
+    const itineraryList = document.querySelectorAll("section.container .text-white p");
+    itineraryList.forEach(p => {
+      p.innerHTML = p.innerHTML.replace(/ELYORA/gi, nama.toUpperCase());
+    });
+  });
+
+    // Tampilkan tombol login / profil dropdown berdasarkan status login
+    const loginBtn = document.getElementById("loginButton");
+    const profileDropdown = document.getElementById("profileDropdown");
+    const username = localStorage.getItem("username");
+
+    if (username) {
+      // Sembunyikan tombol login, tampilkan dropdown
+      loginBtn?.classList.add("d-none");
+      profileDropdown?.classList.remove("d-none");
+
+     // 🔽 Tambahan: Ambil foto profil dari backend
+fetch(`http://localhost:5000/api/profile?username=${username}`)
+  .then(res => res.json())
+  .then(data => {
+    const dropdownLink = profileDropdown.querySelector("a.nav-link");
+    let photoURL = data.photo;
+
+    // ✅ Jika photoURL masih berupa path lokal atau nama file, ubah jadi URL yang bisa diakses
+    if (photoURL && !photoURL.startsWith("http")) {
+      photoURL = `http://localhost:5000/uploads/${photoURL.split('\\').pop().split('/').pop()}`;
+    }
+
+    if (photoURL) {
+      const icon = dropdownLink.querySelector("i");
+      if (icon) icon.remove();
+
+      dropdownLink.innerHTML = `
+        <img src="${photoURL}" alt="Foto" class="rounded-circle me-2" style="width: 32px; height: 32px; object-fit: cover;">
+        <span>${username}</span>
+      `;
+    } else {
+      dropdownLink.innerHTML = `
+        <i class="fas fa-user-circle fs-4"></i> <span>${username}</span>
+      `;
+    }
+  })
+  .catch(err => {
+    console.error("Gagal memuat foto profil:", err);
+  });
+    } else {
+      loginBtn?.classList.remove("d-none");
+      profileDropdown?.classList.add("d-none");
+    }
+    const pesanBtn = document.getElementById("pesanSekarangBtn");
+if (!username && pesanBtn) {
+  pesanBtn.classList.add("disabled");
+  pesanBtn.classList.remove("btn-light", "text-primary");
+  pesanBtn.classList.add("btn-secondary");
+  pesanBtn.textContent = "Login untuk memesan";
+  pesanBtn.href = "#";
+}
+  });
+    </script>
+  </body>
+</html>

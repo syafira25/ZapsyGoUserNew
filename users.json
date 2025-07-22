@@ -1,0 +1,83 @@
+[
+  {
+    "id_user": "USR29739",
+    "password": "$2b$10$jKS20iKALrHmfD5vl9DGTOecZyc32aQxE0Ufh66S8ynschbZ1/zjO",
+    "foto": "/uploads/1982889aacf.jpg",
+    "phone": "+6282390989588",
+    "alamat": "Tiban Lama",
+    "lahir": "2002-11-11",
+    "gender": "Wanita"
+  },
+  {
+    "id_user": "USR82696",
+    "nama": "Amanda Puspita",
+    "email": "amanda@gmail.com",
+    "username": "amanda@gmail.com",
+    "password": "$2b$10$fWTxHbF6VyfITD1EUFcGiujKnSzdqdpQegXR28323E04giy.WsoqO",
+    "foto": "/uploads/1982ac9f11c.webp",
+    "phone": "+6282390989587",
+    "alamat": "Tiban Lama",
+    "lahir": "2004-02-02",
+    "gender": "Wanita"
+  },
+  {
+    "id_user": "USR15728",
+    "nama": "Yusuf Hendrawan",
+    "email": "yusufhendrawan113@gmail.com",
+    "username": "yusufhendrawan113@gmail.com",
+    "password": "$2b$10$SCTzWuppGr5/utFRzwH0i.a/ja5n5QSSaDTSRoD8zmyeSF6PZxQOW",
+    "foto": "/uploads/1982aff1d27.jpg",
+    "phone": "+6282390989589",
+    "alamat": "Sekupang City",
+    "lahir": "2003-09-10",
+    "gender": "Pria"
+  },
+  {
+    "id_user": "USR40589",
+    "nama": "Meliana Efendi",
+    "email": "meli@gmail.com",
+    "username": "meli@gmail.com",
+    "password": "$2b$10$9UT3Tng/2AAL4BZInnr1FuLg0RZpvE8UGTR/tQOIpsU9yXG1W8Vnq",
+    "foto": "/uploads/19828a42923.jpg",
+    "phone": "+6282390989588",
+    "alamat": "Tiban Lama",
+    "lahir": "2002-10-10",
+    "gender": "Wanita"
+  },
+  {
+    "id_user": "USR78880",
+    "nama": "Sri Dwi Meliana",
+    "email": "meliana@gmail.com",
+    "username": "meliana@gmail.com",
+    "password": "$2b$10$zDsaQqRANhTKcjhhyHkHkOSlvYVJXTOZumpt93t25DdWLITdZ3CPi",
+    "foto": "/uploads/1982b3569dd.jpg",
+    "phone": "+6282390989585",
+    "alamat": "Tiban Kampung",
+    "lahir": "2004-01-10",
+    "gender": "Wanita"
+  },
+  {
+    "id_user": "USR83422",
+    "nama": "Syafira",
+    "email": "syafira@gmail.com",
+    "username": "syafira@gmail.com",
+    "password": "$2b$10$9OTvGPXk8wLnEwOHD1aqM.AF91CaI/ez/OZkdaAo7iApWYeepvcV6",
+    "foto": "/uploads/1982cde736b.png",
+    "phone": "+6282390989585",
+    "alamat": "Tiban Kampung",
+    "lahir": "2004-04-04",
+    "gender": "Wanita"
+  },
+  {
+    "id_user": "USR42739",
+    "nama": "Ferdy Sambo",
+    "email": "ferdysambo@gmail.com",
+    "username": "ferdysambo@gmail.com",
+    "password": "$2b$10$5oPZLfg/e93g5wgJqv57JubxElHPtEV2AjC7XwEZnTaart8xg6hPC",
+    "foto": "/uploads/198302ddee3.png",
+    "phone": "085162739222",
+    "alamat": "Jakarta",
+    "lahir": "1976-11-10",
+    "gender": "Pria"
+  }
+]

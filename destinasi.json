@@ -1,0 +1,38 @@
+[
+  {
+    "nama": "Bukit Harimau",
+    "lokasi": "Sekupang",
+    "deskripsi": "Bukit Harimau cocok untuk jogging date dan sunset date",
+    "foto": "/uploads/1982c74e9cb.jpg"
+  },
+  {
+    "nama": "Barelang Bridge",
+    "lokasi": "Barelang Batam Indonesia",
+    "deskripsi": "Barelang adalah bukti bahwa kamu sudah berada di batam",
+    "foto": "/uploads/1982c77663c.jpeg"
+  },
+  {
+    "nama": "Kepri Coral",
+    "lokasi": "Pulau Pengalap, Kelurahan Pulau Abang, Kecamatan Galang, Kota Batam, Kepulauan Riau.",
+    "deskripsi": "salah satu pesona wisata Indonesia yang menyuguhkan pasir pantai yang bersih, terumbu karang dan pemandangan dunia bawah laut.",
+    "foto": "/uploads/1982c85133a.jpg"
+  },
+  {
+    "nama": "Batam Zoo Paradise",
+    "lokasi": "Kawasan Ocarina, Batam Centre",
+    "deskripsi": "menawarkan konsep wisata interaktif. Pengunjung tidak hanya melihat, tetapi juga bisa menyentuh, menggendong, dan memberi makan berbagai jenis hewan, baik lokal maupun dari luar negeri.",
+    "foto": "/uploads/1982c86af32.webp"
+  },
+  {
+    "nama": "Nuvasa Bay Golf",
+    "lokasi": "Nongsa, Batam, Kepulauan Riau",
+    "deskripsi": "menawarkan pengalaman liburan yang tak terlupakan dengan pemandangan pantai yang memukau, lapangan golf kelas internasional, serta berbagai fasilitas mewah yang dikelilinginya.",
+    "foto": "/uploads/1982c8859b5.webp"
+  },
+  {
+    "nama": "New Melur",
+    "lokasi": "Pantai Melur terletak tidak jauh dari Kota Batam. Dari pusat kota, kamu perlu menempuh jarak 57 kilometer atau sekitar 1 jam perjalanan.",
+    "deskripsi": "Salah satu daya tarik dan aktivitas di Pantai Melur yang bisa kamu lakukan adalah menikmati keindahan pantai dan lautan biru sambil melepas penat. Pantai ini memiliki pasir putih yang bersih dan lautan biru. Jadi, kamu bisa membawa alas atau tikar agar bisa duduk-duduk ataupun rebahan di pasirnya sambil bersantai.\r\n\r\nJika kamu tidak ingin terkena sinar matahari langsung, kamu bisa duduk-duduk di bawah pepohonan yang ada di sekitar pantai. Angin pantai dan suara ombak di sana dijamin bikin momen healing kamu menjadi lebih maksimal!",
+    "foto": "/uploads/1982c8a2a71.jpg"
+  }
+]

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapsyGo</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Remix Icon & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Preloader Style -->
+        <style>
+      #preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .spinner {
+        width: 60px;
+        height: 60px;
+        border: 8px solid #eee;
+        border-top: 8px solid #2560a3;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ZapsyGo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-2 m-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">BERANDA</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">TENTANG KAMI</a></li>
+            <li class="nav-item"><a class="nav-link" href="itinerary.html">ITINERARY</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinasi.html">DESTINASI</a></li>
+          </ul>
+          <ul class="navbar-nav gap-2">
+            <li class="nav-item" id="loginButton">
+              <a class="btn fw-bold px-3" href="login.html">MASUK</a>
+            </li>
+            <li class="nav-item dropdown d-none" id="profileDropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-circle fs-4"></i> <span>Profil</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="profile.html">Profil Saya</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item text-danger" href="login.html">Logout </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container" style="padding-top: 80px; padding-bottom: 50px">
+      <div class="mb-4">
+        <a href="index.html" class="btn btn-kembali d-inline-flex align-items-center shadow px-4 py-2"> <i class="fas fa-arrow-left me-2"></i> Kembali </a>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="profile-box shadow d-flex flex-column align-items-center">
+            <img id="photoPreview" src="" alt="Foto Profil" class="profile-img mb-3" />
+
+                <!-- ✅ DATA PROFIL TAMPILAN -->
+    <div id="profileInfo" class="w-100 text-start px-3 mb-3">
+      <p class="mb-1"><strong>Nama:</strong> <span id="viewNama">-</span></p>
+      <p class="mb-1"><strong>Nomor HP:</strong> <span id="viewPhone">-</span></p>
+      <p class="mb-1"><strong>Alamat:</strong> <span id="viewAlamat">-</span></p>
+      <p class="mb-1"><strong>Tanggal Lahir:</strong> <span id="viewLahir">-</span></p>
+      <p class="mb-1"><strong>Jenis Kelamin:</strong> <span id="viewGender">-</span></p>
+    </div>
+
+<!-- FORM EDIT PROFIL -->
+    <form id="editForm" class="d-none w-100 px-3">
+      <input type="file" class="form-control mb-2" id="photoInput" accept="image/*" />
+      <input type="text" class="form-control mb-2" id="inputPhone" placeholder="No HP" />
+      <input type="text" class="form-control mb-2" id="inputAlamat" placeholder="Alamat" />
+      <input type="date" class="form-control mb-2" id="inputLahir" />
+      <select class="form-control mb-2" id="inputGender">
+        <option value="">Pilih Jenis Kelamin</option>
+        <option value="Pria">Pria</option>
+        <option value="Wanita">Wanita</option>
+      </select>
+      <button type="submit" class="btn btn-success w-100">Simpan</button>
+    </form>
+            <div class="d-flex justify-content-center gap-3 mt-4">
+              <button class="btn btn-edit px-4" id="btnEdit"><i class="fas fa-pen"></i> Sunting</button>
+              <a href="login.html" class="btn btn-logout px-4"><i class="fas fa-sign-out-alt"></i> Keluar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-7">
+          <div class="profile-box shadow d-flex flex-column align-items-center">
+            <div class="container py-5">
+              <div class="custom-card bg-white">
+                <h4 class="fw-bold mb-4">Pesanan Booking Saya</h4>
+                <div class="table-wrapper">
+                  <table class="table table-rounded">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Paket</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Jumlah</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td class="text-uppercase">TOUR ELYORA 1 HARI</td>
+                        <td>24/7/2025</td>
+                        <td class="text-capitalize">Menunggu pembayaran</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="contact" class="py-5" style="background-color: #2560a3; color: white">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-md-4">
+            <div class="footer__logo mb-2">
+              <a href="#" class="logo fs-4 fw-bold text-decoration-none text-white">ZapsyGo</a>
+            </div>
+            <p>Explore the world with ease and excitement through our comprehensive travel platform. Your journey begins here, where seamless planning meets unforgettable experiences.</p>
+            <ul class="list-inline mt-3 footer__socials">
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-facebook-fill fs-5 text-white"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-instagram-line fs-5 text-white"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-youtube-line fs-5 text-white"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold text-white">Akses Cepat</h5>
+            <ul class="list-unstyled footer__links">
+              <li><a href="index.html" class="text-decoration-none text-white">Beranda</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Destinasi</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Hotel</a></li>
+              <li><a href="#" class="text-decoration-none text-white">Tentang Kami</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h5 class="mb-3 fw-bold text-white">Kontak Kami</h5>
+            <ul class="list-unstyled footer__links">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-phone-fill me-2"></i> +62918278129 </a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-record-mail-line me-2"></i> info@zapsygo </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-white"> <i class="ri-map-pin-2-fill me-2"></i> Batam, Indonesia </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center mt-4 footer__bar text-white small">Copyright © 2025 ZapsyGo. All rights reserved.</div>
+      </div>
+                  <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner"></div>
+      </div>
+    </footer>
+
+<script>
+      // Preloader hide saat halaman selesai load
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.opacity = "0";
+          preloader.style.transition = "opacity 0.5s ease";
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 500);
+        }
+      });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const loginBtn = document.getElementById("loginButton");
+    const profileDropdown = document.getElementById("profileDropdown");
+
+    // Cek login
+    if (!isLoggedIn) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Tampilkan tombol login/profil
+    loginBtn.classList.toggle("d-none", isLoggedIn);
+    profileDropdown.classList.toggle("d-none", !isLoggedIn);
+
+    // Tombol logout
+    document.querySelector(".btn-logout").addEventListener("click", function (e) {
+      e.preventDefault();
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+      window.location.href = "login.html";
+    });
+
+    const username = localStorage.getItem("username");
+    const form = document.getElementById("editForm");
+    const btnEdit = document.getElementById("btnEdit");
+    const photoInput = document.getElementById("photoInput");
+    const photoPreview = document.getElementById("photoPreview");
+
+    // 🔁 Tambahkan foto profil di navbar (jika ada)
+    fetch(`http://localhost:5000/api/profile?username=${username}`)
+      .then(res => res.json())
+      .then(data => {
+        console.log("Data profil dari server:", data); // 👉 CEK DI CONSOLE
+        // Tampilkan foto profil di dropdown navbar
+if (data.photo) {
+  const icon = profileDropdown.querySelector("i");
+  if (icon) {
+    icon.outerHTML = `<img src="http://localhost:5000${data.photo}" alt="Foto Profil" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;">`;
+  }
+  photoPreview.src = `http://localhost:5000${data.photo}`;
+}
+
+if (data.nama) {
+  const span = profileDropdown.querySelector("span");
+  span.textContent = data.nama;
+}
+
+        // Update tampilan profil
+        updateProfileDisplay(data);
+        if (data.nama) {
+  document.getElementById("viewNama").innerText = data.nama;
+}
+      })
+      .catch(err => console.error("Gagal mengambil profil:", err));
+
+    // Fungsi untuk isi tampilan
+    function updateProfileDisplay(data) {
+      if (data.photo) photoPreview.src = `http://localhost:5000${data.photo}`;
+      if (data.phone) {
+        document.getElementById("inputPhone").value = data.phone;
+        const viewPhone = document.getElementById("viewPhone");
+        if (viewPhone) viewPhone.innerText = data.phone;
+      }
+      if (data.alamat) {
+        document.getElementById("inputAlamat").value = data.alamat;
+        const viewAlamat = document.getElementById("viewAlamat");
+        if (viewAlamat) viewAlamat.innerText = data.alamat;
+      }
+      if (data.lahir) {
+        document.getElementById("inputLahir").value = data.lahir;
+        const viewLahir = document.getElementById("viewLahir");
+        if (viewLahir) viewLahir.innerText = data.lahir;
+      }
+      if (data.gender) {
+        document.getElementById("inputGender").value = data.gender;
+        const viewGender = document.getElementById("viewGender");
+        if (viewGender) viewGender.innerText = data.gender;
+      }
+    }
+
+    // Tombol sunting
+    btnEdit.addEventListener("click", () => {
+      form.classList.toggle("d-none");
+    });
+
+    // Ganti foto preview saat pilih file
+    photoInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          photoPreview.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Simpan perubahan profil
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append("email", username); // karena username di sini adalah email sebenarnya
+  formData.append("phone", document.getElementById("inputPhone").value);
+  formData.append("alamat", document.getElementById("inputAlamat").value);
+  formData.append("lahir", document.getElementById("inputLahir").value);
+  formData.append("gender", document.getElementById("inputGender").value);
+  if (photoInput.files[0]) {
+    formData.append("foto", photoInput.files[0]);
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/update-profile", {
+      method: "POST",
+      body: formData,
+    });
+
+    const json = await res.json();
+    alert(json.message);
+    form.classList.add("d-none");
+
+    // Ambil ulang data terbaru
+    fetch(`http://localhost:5000/api/profile?username=${username}`)
+      .then(res => res.json())
+      .then(data => updateProfileDisplay(data));
+  } catch (err) {
+    alert("Gagal menyimpan profil");
+    console.error(err);
+  }
+});
+  });
+  // Ambil data booking dari backend
+   // Ambil data booking & transaksi
+  Promise.all([
+    fetch("http://localhost:5000/api/bookings").then(res => res.json()),
+    fetch("http://localhost:5000/api/transaksi").then(res => res.json())
+  ])
+  .then(([bookings, transaksi]) => {
+    const username = localStorage.getItem("username");
+    const myBookings = bookings.filter(b => b.username === username);
+    const myTransaksi = transaksi.filter(t => {
+      const relatedBooking = bookings.find(b => b.id_booking === t.id_booking);
+      return relatedBooking && relatedBooking.username === username;
+    });
+
+    const tbody = document.querySelector("tbody");
+    tbody.innerHTML = "";
+
+    if (myBookings.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5" class="text-center">Belum ada pesanan</td></tr>`;
+      return;
+    }
+
+    myBookings.forEach((b, i) => {
+      const trx = myTransaksi.find(t => t.id_booking === b.id_booking);
+
+      const jumlahTransfer = trx ? `Rp${Number(trx.jumlah_transfer).toLocaleString("id-ID")}` : "-";
+      const status = b.status || (trx?.status_verifikasi || "Belum dibayar");
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${i + 1}</td>
+        <td class="text-uppercase">${b.nama_paket}</td>
+        <td>${new Date(b.tanggal_pemesanan).toLocaleDateString("id-ID")}</td>
+        <td class="text-capitalize">${status}</td>
+        <td>${jumlahTransfer}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  })
+  .catch(err => {
+    console.error("Gagal mengambil data:", err);
+    const tbody = document.querySelector("tbody");
+    tbody.innerHTML = `<tr><td colspan="5" class="text-center">Gagal memuat data</td></tr>`;
+  });
+</script>
+  </body>
+</html>

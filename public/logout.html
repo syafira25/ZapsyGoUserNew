@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="2; url=index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logout - ZapsyGo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="text-center">
+      <div class="spinner-border text-primary mb-3" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <h5>Anda sedang keluar...</h5>
+      <p class="text-muted">Mengalihkan ke halaman utama...</p>
+    </div>
+
+    <script>
+      // Hapus status login dari localStorage
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("username");
+
+      // Redirect manual (fallback jika <meta> gagal)
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
+    </script>
+  </body>
+</html>

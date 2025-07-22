@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapsyGo - Destinasi Batam</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">ZapsyGo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav gap-2 m-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">BERANDA</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">TENTANG KAMI</a></li>
+            <li class="nav-item"><a class="nav-link" href="itinerary.html">ITINERARY</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinasi.html">DESTINASI</a></li>
+          </ul>
+          <ul class="navbar-nav gap-2">
+            <!-- Tombol Masuk (untuk user belum login) -->
+            <li class="nav-item" id="loginButton">
+              <a class="btn fw-bold px-3" href="login.html">MASUK</a>
+            </li>
+
+            <!-- Dropdown Profil (hanya muncul jika sudah login) -->
+            <li class="nav-item dropdown d-none" id="profileDropdown">
+              <a class="nav-link dropdown-toggle d-flex align-items-center gap-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user-circle fs-4"></i> <span>Profil</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="profile.html">Profil Saya</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item text-danger" href="logout.html">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Destinasi Section -->
+    <section class="container pt-5 mb-5">
+      <h2 class="text-center mb-4 fw-bold" style="color: #2560a3">Destinasi Wisata di Batam</h2>
+      <p class="text-center text-muted mb-2">Jelajahi berbagai tempat menarik di Batam untuk liburan seru dan tak terlupakan!</p>
+
+      <!-- Search Section -->
+      <div class="container mt-3">
+        <form id="searchForm">
+          <div class="input-group mb-4 shadow-sm">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cari destinasi di Batam..." />
+            <button class="btn" style="background-color: #2560a3; color: white" type="submit"><i class="fas fa-search me-1"></i> Cari</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row g-4" id="destinasiContainer">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/kepricoral.webp" class="card-img-top" alt="Kepri Coral" />
+            <div class="card-body">
+              <h5 class="card-title text-primary">Kepri Coral</h5>
+              <p class="card-text"><strong>Lokasi:</strong> Pulau Pengalap, Galang</p>
+              <p class="card-text">Snorkeling, underwater view, dan pasir putih yang memukau di pulau terpencil.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/batam zoo.webp" class="card-img-top" alt="Batam Zoo Paradise" />
+            <div class="card-body">
+              <h5 class="card-title text-primary">Batam Zoo Paradise</h5>
+              <p class="card-text"><strong>Lokasi:</strong> Jl. Costarina, Bengkong</p>
+              <p class="card-text">Kebun binatang modern dengan koleksi satwa dan wahana bermain anak-anak.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="assets/nuvasagolf.webp" class="card-img-top" alt="Nuvasa Bay Golf" />
+            <div class="card-body">
+              <h5 class="card-title text-primary">Nuvasa Bay Golf</h5>
+              <p class="card-text"><strong>Lokasi:</strong> Nongsa, Batam</p>
+              <p class="card-text">Lapangan golf mewah dengan pemandangan laut dan fasilitas resort eksklusif.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tambahkan lebih banyak destinasi di sini jika perlu -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-5">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- Kolom 1: Logo dan Deskripsi -->
+          <div class="col-md-4">
+            <div class="footer__logo mb-2">
+              <a href="#" class="logo fs-4 fw-bold text-decoration-none" style="color: #2560a3">ZapsyGo</a>
+            </div>
+            <p style="color: #2560a3">
+              Explore the world with ease and excitement through our comprehensive travel platform. Your journey begins here, where seamless planning meets unforgettable experiences.
+            </p>
+            <ul class="list-inline mt-3 footer__socials">
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-facebook-fill fs-5 text-light"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-instagram-line fs-5 text-light"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="ri-youtube-line fs-5 text-light"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom 2: Akses Cepat -->
+          <div class="col-md-4" style="color: #2560a3">
+            <h5 class="mb-3 fw-bold">Akses Cepat</h5>
+            <ul class="list-unstyled footer__links">
+              <li><a href="index.html" class="text-decoration-none text-dark">Beranda</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Destinasi</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Hotel</a></li>
+              <li><a href="#" class="text-decoration-none text-dark">Tentang Kami</a></li>
+            </ul>
+          </div>
+
+          <!-- Kolom 3: Kontak -->
+          <div class="col-md-4" style="color: #2560a3">
+            <h5 class="mb-3 fw-bold">Kontak Kami</h5>
+            <ul class="list-unstyled footer__links">
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-dark"> <i class="ri-phone-fill me-2"></i> +62918278129 </a>
+              </li>
+              <li class="mb-2">
+                <a href="#" class="text-decoration-none text-dark"> <i class="ri-record-mail-line me-2"></i> info@zapsygo </a>
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-dark"> <i class="ri-map-pin-2-fill me-2"></i> Batam, Indonesia </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer bar -->
+        <div class="text-center mt-4 footer__bar text-muted small">Copyright © 2025 ZapsyGo. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      // Aktifkan nav-link berdasarkan URL path
+      window.addEventListener("DOMContentLoaded", () => {
+        const currentPath = window.location.pathname.split("/").pop(); // Misalnya: "index.html"
+
+        document.querySelectorAll(".nav-link").forEach((link) => {
+          const linkHref = link.getAttribute("href").split("/").pop(); // Ambil "index.html" dari href
+
+          // Untuk internal section (#tour, #package), cocokkan dengan hash
+          if (linkHref.startsWith("#")) {
+            if (window.location.hash === linkHref) {
+              link.classList.add("active");
+            }
+          } else {
+            // Untuk file path
+            if (currentPath === "" && linkHref === "index.html") {
+              link.classList.add("active");
+            } else if (currentPath === linkHref) {
+              link.classList.add("active");
+            }
+          }
+        });
+      });
+
+      // Simulasi status login
+      const isLoggedIn = false; // Ubah ke false jika ingin menyembunyikan profil
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginBtn = document.getElementById("loginButton");
+        const profileDropdown = document.getElementById("profileDropdown");
+
+        if (isLoggedIn) {
+          loginBtn.classList.add("d-none");
+          profileDropdown.classList.remove("d-none");
+        } else {
+          loginBtn.classList.remove("d-none");
+          profileDropdown.classList.add("d-none");
+        }
+      });
+
+      document.getElementById("searchInput").addEventListener("input", function () {
+  const keyword = this.value.toLowerCase();
+  const cards = document.querySelectorAll("#destinasiContainer .card");
+
+  cards.forEach((card) => {
+    const title = card.querySelector(".card-title").textContent.toLowerCase();
+    const lokasi = card.querySelector(".card-text").textContent.toLowerCase();
+
+    if (title.includes(keyword) || lokasi.includes(keyword)) {
+      card.parentElement.style.display = "block";
+    } else {
+      card.parentElement.style.display = "none";
+    }
+  });
+});
+    </script>
+  </body>
+</html>

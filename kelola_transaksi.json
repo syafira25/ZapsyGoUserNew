@@ -1,0 +1,57 @@
+[
+  {
+    "id_transaksi": "TRX1753026165861",
+    "id_booking": "BK1753026165861",
+    "nama_pengirim": "yusufhendrawan113@gmail.com",
+    "nama_paket": "TOUR 1 HARI ELYORA",
+    "metode_pembayaran": "bca",
+    "jumlah_transfer": 1201000,
+    "bukti_transfer": "/uploads/1982880ff3f.jpg",
+    "tanggal_transfer": "2025-07-20T15:42:45.861Z",
+    "status_verifikasi": "Ditolak"
+  },
+  {
+    "id_transaksi": "TRX1753067400317",
+    "id_booking": "BK1753067400317",
+    "nama_pengirim": "amanda@gmail.com",
+    "nama_paket": "TOUR 1 HARI ELYORA",
+    "metode_pembayaran": "bca",
+    "jumlah_transfer": 1201000,
+    "bukti_transfer": "/uploads/1982afb2438.png",
+    "tanggal_transfer": "2025-07-21T03:10:00.319Z",
+    "status_verifikasi": "Selesai"
+  },
+  {
+    "id_transaksi": "TRX1753071711672",
+    "id_booking": "BK1753071711672",
+    "nama_pengirim": "meliana@gmail.com",
+    "nama_paket": "TOUR 1 HARI ELYORA",
+    "metode_pembayaran": "mandiri",
+    "jumlah_transfer": 601000,
+    "bukti_transfer": "/uploads/1982b37b227.jpg",
+    "tanggal_transfer": "2025-07-21T04:21:51.672Z",
+    "status_verifikasi": "Ditolak"
+  },
+  {
+    "id_transaksi": "TRX1753099305489",
+    "id_booking": "BK1753099305489",
+    "nama_pengirim": "meliana@gmail.com",
+    "nama_paket": "TOUR 1 HARI ELYORA",
+    "metode_pembayaran": "mandiri",
+    "jumlah_transfer": 1201000,
+    "bukti_transfer": "/uploads/1982cdcd354.png",
+    "tanggal_transfer": "2025-07-21T12:01:45.492Z",
+    "status_verifikasi": "Selesai"
+  },
+  {
+    "id_transaksi": "TRX1753155047555",
+    "id_booking": "BK1753155047555",
+    "nama_pengirim": "ferdysambo@gmail.com",
+    "nama_paket": "TOUR 1 HARI ELYORA",
+    "metode_pembayaran": "bca",
+    "jumlah_transfer": 901000,
+    "bukti_transfer": "/uploads/198302f37fa.jpg",
+    "tanggal_transfer": "2025-07-22T03:30:47.558Z",
+    "status_verifikasi": "Selesai"
+  }
+]
